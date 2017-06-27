@@ -1,0 +1,20 @@
+<div class="row">
+  <div id="newsfeed" class="col-lg-6">
+    <h4><%= fa_icon "newspaper-o" %> NEWSFEED</h4>
+    <div id="activities">
+      <% if @activities.empty? %>
+        <div class="well">
+          <%= render('shared/no_resource', resources: 'Activities') %>
+        </div>
+      <% else %>
+        <%= render_activities(@activities, layout: '/shared/activity') %>
+      <% end %>
+    </div>
+    <%= render 'shared/paginate', resources: @activities %>
+  </div>
+  <div id="intro" class="col-lg-6">
+    <h1>Cookpad Network!</h1>
+	<p> This is the basic Web app developed for the programming contest of Cookpad Inc. Hope you like it. You can also have a look at my <a href="https://sriharshagajavalli.github.io/">blog</a> to know more about my personality.
+    
+  </div>
+</div>
